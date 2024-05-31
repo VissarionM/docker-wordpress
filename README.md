@@ -1,6 +1,6 @@
 DOCKER WORDPRESS
 
-This is an application for WordPress. We are going to need the application itself, a database, in this case MariaDB and finally a proxy server, among others services, for load-balancing the containers.
+This is an application for WordPress. We are going to need the application itself, a database, in this case MariaDB and finally a proxy server, among other services, for load-balancing the containers.
 
 You can install all the files by yourself, following the guide that follows or you can download the app itself from the GitHub. https://github.com/VissarionM/docker-wordpress. 
 
