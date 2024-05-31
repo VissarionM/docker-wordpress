@@ -15,7 +15,6 @@ https://docs.docker.com/desktop/install/windows-install/
 Make sure to enable WSL integration in Docker's Resources. Also, enable each distribution you want to use in the list.
 
 LINUX 
-Ubuntu Jammy Cloud LTS server (https://cyclades.okeanos-knossos.grnet.gr/ui/)
 Ubuntu 22.04.3 LTS
 Ubuntu 22.04 LTS
 Ubuntu 20.04.6 LTS
@@ -71,3 +70,5 @@ Execute the command "docker compose down" to run the containers.
 DOCKER SWARM
 Use the command "docker swarm init --advertise-addr <IP address>
 CAUTION: The docker don't have the native network docker0 in the Windows networks. Also, the windows use WSL(Hyper-V Firewall) which communicates with the installed WSL machines. That means the WSL machine cannot communicate outside with it's IP address, with the exception of the Windows IP address. Docker uses docker0 network that runs with linux, so in order to run a swarm manager, use linux OS.
+
+Ubuntu Jammy Cloud LTS server (https://cyclades.okeanos-knossos.grnet.gr/ui/)
