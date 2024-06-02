@@ -41,7 +41,7 @@ services:
       WORDPRESS_DB_PASSWORD: example_user_password
       WORDPRESS_DB_NAME: wordpress
     deploy:
-      replicas: 4
+      replicas: 8
     #  placement:
     #    max_replicas_per_node: 1
     #    constraints:
