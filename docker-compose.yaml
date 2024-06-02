@@ -15,9 +15,9 @@ services:
       MYSQL_USER: wordpress_user
       MYSQL_PASSWORD: example_user_password
     deploy:
-      placement:
-        constraints:
-          - node.labels.region == okeanos
+    #  placement:
+    #    constraints:
+    #      - node.labels.region == okeanos
       resources:
         reservations:
           cpus: '0.5'
@@ -42,10 +42,10 @@ services:
       WORDPRESS_DB_NAME: wordpress
     deploy:
       replicas: 4
-      placement:
-        max_replicas_per_node: 1
-        constraints:
-          - node.labels.region == okeanos
+    #  placement:
+    #    max_replicas_per_node: 1
+    #    constraints:
+    #      - node.labels.region == okeanos
       resources:
         reservations:
           cpus: '0.5'
@@ -68,9 +68,9 @@ services:
     networks:
       - app-network
     deploy:
-      placement:
-        constraints:
-          - node.labels.region == okeanos 
+    #  placement:
+    #    constraints:
+    #      - node.labels.region == okeanos 
       resources:
         reservations:
           cpus: '0.5'
