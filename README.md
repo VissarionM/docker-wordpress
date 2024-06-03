@@ -24,5 +24,5 @@ To set up the WordPress application, follow these steps:
     ```bash
     ./App.sh
     ```
-
-For more detailed information on installation, Dockerfile, building images, configurations, and dependencies, refer to the `Guide-asciidoc.adoc` file.
+For installation on Ubuntu, see `INSTALL.adoc`.
+For more detailed information on installation, Dockerfile, building images, configurations, and dependencies, refer to the `Guide-asciidoc.adoc` file. This file provides an in-depth analysis to build your project.
