@@ -1,3 +1,8 @@
+#=========================================================================
+# This files is the same as docker-compose.
+# Only added a line in volumes in Nginx. 
+# This line points to the ssl conf.
+#======================================================================== 
 version: '3.8'
 
 services:
