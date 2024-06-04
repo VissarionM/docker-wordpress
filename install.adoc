@@ -42,7 +42,20 @@ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin 
 sudo docker run hello-world
 ----
 
-== Dockerfile Installation 
+== Quick set up
+
+=== Using Git Hub repository
+
+Clone the Repository
+
+[source,bash]
+----
+git clone https://github.com/VissarionM/docker-wordpress.git
+----
+
+or download and extract the .zip file.
+ 
+=== Using Dockerfile Installation 
 
 Run the following command to download dockerfile and various files for Wordpress, MariaDB and Nginx:
 [source,bash]

@@ -1,6 +1,6 @@
 DOCKER WORDPRESS
 
-This is an application for `WordPress`. We are going to need the application itself, a database, in this case `MariaDB` and finally a proxy server, `Nginx`, for load-balancing the containers.
+This is an application for `WordPress`. We are going to use the application itself, a database, which in this case is `MariaDB` and finally a proxy server, `Nginx`, for load-balancing the containers.
 
 If you wish, you can do the complete installation by yourself, following the guide.pdf or do a simple installation by following install.pdf.
 
@@ -24,13 +24,12 @@ MariaDB version
 Wordpress version
 Nginx version
 
-SET UP
+Set up
+
 For Wordpress, we use php-fpm that listens to port:9000 because it runs the best with Nginx.
 We use an Nginx-alpine because it is lightweight, stable and runs smoothly with fpm.
 For nginx.conf, copy or download the file in the GitHub repo link that was given earlier. 
-
 Make sure that all files can be executed, else use the "chmod +x <my_script>" command inside the folder of each script.
-
 Make sure that all needed ports have access through the firewall. 
 
 - ssh/Openssh, port:22/tcp
@@ -38,11 +37,13 @@ Make sure that all needed ports have access through the firewall.
 - php-fpm, port:9000/tcp
 - Docker swarm, port: 2377/tcp, 4789/udp, 7946/tcp and udp
 
-Execute the command "docker compose up -d" to run the containers.
-    
-SHOW RUNNING CONTAINERS
-Execute the command "Docker ps".
+Automatic execution of the app 
 
-Start the application
-Run the command: 
+[source,bash]
+----
+git clone https://github.com/VissarionM/docker-wordpress.git
+./dockerfile-install.sh
+./build.sh
+docker-compose up -d
 ./App.sh
+----

@@ -9,6 +9,29 @@ There is always the option to pull the latest images in the `docker-composer` fi
 
 This guide follows Windows and Linux installation, but the app will run in linux OS.
 
+== Quick set up
+
+=== Use Git Hub repository
+
+If you do not want to follow all the way then start by cloning the repository.
+
+[source,bash]
+----
+git clone https://github.com/VissarionM/docker-wordpress.git
+----
+
+or download and extract the .zip file.
+
+Use dockerfile-install.sh 
+
+Execute the command:
+[source,bash]
+----
+./dockerfile-install.sh
+----
+
+Now, skip to the section *build images*.
+
 == OS for docker installation
 
 === Windows
@@ -90,7 +113,7 @@ Nginx version:
 
 === Ubuntu
 
-Create the script `image-install.sh` or you can follow the next instructions or copy-paste in cli and run as commands.
+Create the script `dockerfile-install.sh` or you can follow the next instructions or copy-paste in cli and run as commands.
 
 [source,bash]
 ----
