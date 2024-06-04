@@ -1,28 +1,48 @@
-# Docker WordPress Application
+DOCKER WORDPRESS
 
-This repository contains scripts and configurations for setting up a WordPress application using Docker. It utilizes the following services:
+This is an application for `WordPress`. We are going to need the application itself, a database, in this case `MariaDB` and finally a proxy server, `Nginx`, for load-balancing the containers.
 
-- MariaDB database
-- wordpress-fpm
-- Nginx
+If you wish, you can do the complete installation by yourself, following the guide.pdf or do a simple installation by following install.pdf.
 
-## Getting Started
+Windows
+Download from Microsoft Store, WSL linux distributions.
+Make sure to enable WSL integration in Docker's Resources. Also, enable each distribution you want to use in the list.
 
-To set up the WordPress application, follow these steps:
+Ubuntu 
 
-1. Build the Docker images by running:
-    ```bash
-    ./build.sh
-    ```
+- Ubuntu Jammy Cloud LTS server (https://cyclades.okeanos-knossos.grnet.gr/ui/)
 
-2. Start the Docker containers in detached mode:
-    ```bash
-    docker-compose up -d
-    ```
+- Ubuntu 22.04.3 LTS
 
-3. Run the application script:
-    ```bash
-    ./App.sh
-    ```
-For installation on Ubuntu, see `INSTALL`.
-For more detailed information on installation, Dockerfile, building images, configurations, and dependencies, refer to the `Guide` file. This file provides an in-depth analysis to build your project.
+- Ubuntu 22.04 LTS
+
+- Ubuntu 20.04.6 LTS
+
+Images
+
+MariaDB version
+Wordpress version
+Nginx version
+
+SET UP
+For Wordpress, we use php-fpm that listens to port:9000 because it runs the best with Nginx.
+We use an Nginx-alpine because it is lightweight, stable and runs smoothly with fpm.
+For nginx.conf, copy or download the file in the GitHub repo link that was given earlier. 
+
+Make sure that all files can be executed, else use the "chmod +x <my_script>" command inside the folder of each script.
+
+Make sure that all needed ports have access through the firewall. 
+
+- ssh/Openssh, port:22/tcp
+- Nginx, port:80/tcp
+- php-fpm, port:9000/tcp
+- Docker swarm, port: 2377/tcp, 4789/udp, 7946/tcp and udp
+
+Execute the command "docker compose up -d" to run the containers.
+    
+SHOW RUNNING CONTAINERS
+Execute the command "Docker ps".
+
+Start the application
+Run the command: 
+./App.sh

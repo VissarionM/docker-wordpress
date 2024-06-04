@@ -1,0 +1,85 @@
+= Docker Engine Installation Instructions for Ubuntu
+
+== Installation of Dockerfile and dependencies.
+
+To install Docker Engine on Ubuntu, you can follow the instructions provided in the official documentation: 
+
+- https://docs.docker.com/engine/install/ubuntu/.
+
+Uninstall all conflicting packages
+[source,bash]
+----
+for pkg in docker.io docker-doc docker-compose docker-compose-v2 podman-docker containerd runc; do sudo apt-get remove $pkg; done
+----
+
+1. Set up Docker's `apt` repository.
+[source,bash]
+----
+# Add Docker's official GPG key:
+sudo apt-get update
+sudo apt-get install ca-certificates curl
+sudo install -m 0755 -d /etc/apt/keyrings
+sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+sudo chmod a+r /etc/apt/keyrings/docker.asc
+
+# Add the repository to Apt sources:
+echo \
+  "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+  $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
+  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt-get update
+----
+
+2.Install the Docker packages.
+[source,bash]
+----
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+----
+
+3.Verify that the Docker Engine installation is successful by running the `hello-world` image. 
+[source,bash]
+----
+sudo docker run hello-world
+----
+
+== Dockerfile Installation 
+
+Run the following command to download dockerfile and various files for Wordpress, MariaDB and Nginx:
+[source,bash]
+----
+./dockerfile-install.sh
+----
+
+== Build Images
+
+Run the following command to build Docker images :
+[source,bash]
+----
+./build.sh
+----
+
+== Running Containers
+
+To run containers, execute the following Docker Compose command:
+[source,bash]
+----
+docker-compose up -d
+----
+
+== Installing CLI Tools
+
+Install `lynx` or `links` for the command-line interface (CLI) to run Wordpress:
+[source,bash]
+----
+sudo apt-get install lynx  // For Lynx
+// OR
+sudo apt-get install links  // For Links
+----
+
+== Installing GUI for Browser
+
+Install a GUI to run Wordpress. For example, to install Firefox, run:
+[source,bash]
+----
+sudo apt-get install firefox
+----
